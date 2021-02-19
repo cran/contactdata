@@ -5,10 +5,12 @@
 
 <!-- badges: start -->
 
+[![cran
+version](https://www.r-pkg.org/badges/version-ago/contactdata)](https://cran.r-project.org/package=contactdata/)
 [![R build
 status](https://github.com/Bisaloo/contactdata/workflows/R-CMD-check/badge.svg)](https://github.com/Bisaloo/contactdata/actions)
 [![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![Codecov test
 coverage](https://codecov.io/gh/Bisaloo/contactdata/branch/main/graph/badge.svg)](https://codecov.io/gh/Bisaloo/contactdata?branch=main)
 <!-- badges: end -->
@@ -33,11 +35,17 @@ authoritative name source.
 
 ## Installation
 
-You can install the development version of contactdata from GitHub with:
+You can install this package from CRAN:
 
 ``` r
-# install.packages("remotes")
-remotes::install_github("Bisaloo/contactdata")
+install.packages("contactdata")
+```
+
+or the development version from [GitHub](https://github.com/bisaloo),
+via my [r-universe](https://bisaloo.r-universe.dev/):
+
+``` r
+install.packages("contactdata", repos = "https://bisaloo.r-universe.dev")
 ```
 
 ## Example
@@ -104,3 +112,8 @@ contact_matrix("France")
 You can also get several countries at once with the
 `contact_df_countries()` function, as detailed in the
 [vignette](https://bisaloo.github.io/contactdata/articles/visualise.html).
+
+Because it is very likely that users of this package will also need data
+about the population in each age group, it is also bundled in this
+package for convenience. Please see `?age_df_countries` for more
+information.
