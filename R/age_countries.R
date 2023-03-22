@@ -5,7 +5,7 @@
 #' @return A data.frame (in long format) with 3 columns:
 #'   * `country`: the country name
 #'   * `age`: the age group
-#'   * `pop`: the number of people in this age group
+#'   * `population`: the number of people in this age group
 #'
 #' @examples
 #' age_df_countries(c("Austria", "Belgium"))
@@ -27,7 +27,7 @@ age_df_countries <- function(countries) {
   if (length(unknown_countries) != 0) {
     warning(
       "The following countries are not included in the dataset:\n",
-      paste0(unknown_countries, collapse = ", "), "\n",
+      toString(unknown_countries), "\n",
       "Use the list_countries() function to get a list of all ",
       "countries in the dataset.",
       call. = FALSE

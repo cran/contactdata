@@ -7,23 +7,33 @@
 
 [![cran
 version](https://www.r-pkg.org/badges/version-ago/contactdata)](https://cran.r-project.org/package=contactdata/)
-[![R build
-status](https://github.com/Bisaloo/contactdata/workflows/R-CMD-check/badge.svg)](https://github.com/Bisaloo/contactdata/actions)
+[![R-CMD-check](https://github.com/Bisaloo/contactdata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Bisaloo/contactdata/actions/workflows/R-CMD-check.yaml)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![Codecov test
-coverage](https://codecov.io/gh/Bisaloo/contactdata/branch/main/graph/badge.svg)](https://codecov.io/gh/Bisaloo/contactdata?branch=main)
+coverage](https://codecov.io/gh/Bisaloo/contactdata/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Bisaloo/contactdata?branch=main)
 <!-- badges: end -->
 
 The goal of contactdata is to provide access to social contact data for
-152 countries. This data comes from
+177 countries. This data comes from
 
 > Kiesha Prem, Alex R. Cook, Mark Jit, *Projecting social contact
 > matrices in 152 countries using contact surveys and demographic data*,
 > PLoS Comp. Biol. (2017),
 > <https://doi.org/10.1371/journal.pcbi.1005697>.
 
-(please cite it in your publications, alongside this package).
+and
+
+> Kiesha Prem, Kevin van Zandvoort, Petra Klepac, Rosalind M. Eggo,
+> Nicholas G. Davies, CMMID COVID-19 Working Group, Alex R. Cook, Mark
+> Jit, *Projecting contact matrices in 177 geographical regions: An
+> update and comparison with empirical data for the COVID-19 era*, PLoS
+> Comp. Biol. (2021), <https://doi.org/10.1371/journal.pcbi.1009098>.
+
+(please cite them in your publications, alongside this package).
+
+**Note that this package does not make any geopolitical statement and
+only provides the data as it has been published.**\<
 
 contactdata offers an easier access to this data, makes it readily
 compatible with [tidyverse](https://www.tidyverse.org/) packages, such
@@ -111,7 +121,7 @@ contact_matrix("France")
 
 You can also get several countries at once with the
 `contact_df_countries()` function, as detailed in the
-[vignette](https://bisaloo.github.io/contactdata/articles/visualise.html).
+[vignette](https://hugogruson.fr/contactdata/articles/visualise_contact.html).
 
 Because it is very likely that users of this package will also need data
 about the population in each age group, it is also bundled in this

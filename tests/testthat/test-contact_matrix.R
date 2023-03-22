@@ -23,4 +23,10 @@ test_that("contact_matrix()", {
     "not included"
   )
 
+  expect_snapshot(res)
+
+  res_2017 <- contact_matrix("Belgium", location = "school", data_source = "2017")
+
+  expect_snapshot(res_2017)
+
 })

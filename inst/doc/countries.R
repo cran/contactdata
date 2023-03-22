@@ -8,17 +8,21 @@ knitr::opts_chunk$set(
 library(contactdata)
 
 ## -----------------------------------------------------------------------------
-(all_contacts <- list_countries())
+(all_countries_2017 <- list_countries(data_source = 2017))
+(all_countries_2020 <- list_countries(data_source = 2020))
 
 ## ---- fig.width=10, fig.fullwidth=TRUE, eval = requireNamespace("ggplot2", quietly = TRUE) & requireNamespace("maps", quietly = TRUE) & requireNamespace("countrycode", quietly = TRUE)----
 library(ggplot2)
 
-wlrd <- map_data("world")
-wlrd$region <- countrycode::countryname(wlrd$region)
+wrld <- map_data("world")
+wrld$region <- countrycode::countryname(wrld$region)
 
-wlrd$included <- wlrd$region %in% all_contacts
+wrld$included <- "Not included"
 
-ggplot(wlrd, aes(long, lat, group = group, fill = included)) +
+wrld$included[wrld$region %in% all_countries_2020] <- "2020"
+wrld$included[wrld$region %in% all_countries_2017] <- "2017 & 2020"
+
+ggplot(wrld, aes(long, lat, group = group, fill = included)) +
   geom_polygon() +
   coord_equal() +
   theme_bw()

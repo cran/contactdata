@@ -4,16 +4,13 @@
 \alias{contact_df_countries}
 \title{Get a data.frame (in long format) of contact data for multiple countries}
 \usage{
-contact_df_countries(
-  countries,
-  location = c("all", "home", "school", "work", "other")
-)
+contact_df_countries(countries, ...)
 }
 \arguments{
 \item{countries}{A character string or a vector of character containing the
 names of the countries for which to return contact data}
 
-\item{location}{Character. One of "all", "home", "school", "work" or "other".}
+\item{...}{Arguments passed to \code{\link[=contact_matrix]{contact_matrix()}}}
 }
 \value{
 A data.frame (in long format) with 4 columns:
@@ -32,7 +29,13 @@ contact_df_countries(c("Austria", "Belgium"), location = "all")
 
 }
 \references{
-Kiesha Prem, Alex R. Cook, Mark Jit, Projecting social contact
-matrices in 152 countries using contact surveys and demographic data, PLoS
+Kiesha Prem, Alex R. Cook, Mark Jit, \emph{Projecting social contact
+matrices in 152 countries using contact surveys and demographic data}, PLoS
 Comp. Biol. (2017), \doi{10.1371/journal.pcbi.1005697}
+
+Kiesha Prem, Kevin van Zandvoort, Petra Klepac, Rosalind M. Eggo,
+Nicholas G. Davies, CMMID COVID-19 Working Group, Alex R. Cook, Mark Jit,
+\emph{Projecting contact matrices in 177 geographical regions: An update and
+comparison with empirical data for the COVID-19 era}, PLoS Comp. Biol.
+(2021), \doi{10.1371/journal.pcbi.1009098}.
 }

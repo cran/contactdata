@@ -1,8 +1,8 @@
 #' Get a data.frame (in long format) of contact data for multiple countries
 #'
-#' @inheritParams contact_matrix
 #' @param countries A character string or a vector of character containing the
 #'    names of the countries for which to return contact data
+#' @param ... Arguments passed to [contact_matrix()]
 #'
 #' @return A data.frame (in long format) with 4 columns:
 #'   * `country`: the country name
@@ -19,9 +19,12 @@
 #'
 #' @inherit list_countries references
 
-contact_df_countries <- function(countries, location = c("all", "home", "school", "work", "other")) {
+contact_df_countries <- function(
+  countries,
+  ...
+) {
 
-  res <- lapply(countries, contact_matrix, location)
+  res <- lapply(countries, contact_matrix, ...)
 
   res <- lapply(seq_along(res), function(i) {
     out <- reshape(
@@ -36,7 +39,7 @@ contact_df_countries <- function(countries, location = c("all", "home", "school"
     rownames(out) <- NULL
     colnames(out)[2] <- "contact"
     out$country <- countries[[i]]
-    out <- out[, c(4,3,1,2)]
+    out <- out[, c(4, 3, 1, 2)]
     return(out)
   })
 
