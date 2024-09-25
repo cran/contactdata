@@ -15,14 +15,14 @@ countries <- c("Portugal", "Spain", "Italy", "France", "Ireland", "Belgium", "Lu
 ## -----------------------------------------------------------------------------
 contact_data <- contact_df_countries(countries, location = "all")
 
-## ---- eval = requireNamespace("ggplot2", quietly = TRUE)----------------------
+## ----eval = requireNamespace("ggplot2", quietly = TRUE)-----------------------
 library(ggplot2)
 ggplot(contact_data, aes(x = age_from, y = age_to, fill = contact)) +
   geom_tile() +
   facet_wrap(~country) +
   coord_equal()
 
-## ---- eval = requireNamespace("ggplot2", quietly = TRUE)----------------------
+## ----eval = requireNamespace("ggplot2", quietly = TRUE)-----------------------
 ggplot(contact_data, aes(x = age_from, y = age_to, fill = contact)) +
   geom_tile() +
   facet_wrap(~country) +
@@ -33,7 +33,7 @@ ggplot(contact_data, aes(x = age_from, y = age_to, fill = contact)) +
 ## -----------------------------------------------------------------------------
 contact_data <- contact_df_countries(countries, location = "school")
 
-## ---- eval = requireNamespace("ggplot2", quietly = TRUE)----------------------
+## ----eval = requireNamespace("ggplot2", quietly = TRUE)-----------------------
 ggplot(contact_data, aes(x = age_from, y = age_to, fill = contact)) +
   geom_tile() +
   facet_wrap(~country) +

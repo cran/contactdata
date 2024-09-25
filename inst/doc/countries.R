@@ -11,7 +11,7 @@ library(contactdata)
 (all_countries_2017 <- list_countries(data_source = 2017))
 (all_countries_2020 <- list_countries(data_source = 2020))
 
-## ---- fig.width=10, fig.fullwidth=TRUE, eval = requireNamespace("ggplot2", quietly = TRUE) & requireNamespace("maps", quietly = TRUE) & requireNamespace("countrycode", quietly = TRUE)----
+## ----fig.width=10, fig.fullwidth=TRUE, eval = requireNamespace("ggplot2", quietly = TRUE) & requireNamespace("maps", quietly = TRUE) & requireNamespace("countrycode", quietly = TRUE)----
 library(ggplot2)
 
 wrld <- map_data("world")
